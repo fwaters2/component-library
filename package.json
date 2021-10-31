@@ -1,0 +1,19 @@
+{
+  "name": "cresta-component-library",
+  "version": "0.0.1",
+  "description": "Component Library for Cresta AI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fwaters2/cresta-component-library.git"
+  },
+  "author": "Forrest Waters",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fwaters2/cresta-component-library/issues"
+  },
+  "homepage": "https://github.com/fwaters2/cresta-component-library#readme"
+}
