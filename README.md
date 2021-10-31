@@ -28,7 +28,8 @@ npm run build
 ### Storybook
 
 - [Live Storybook](https://617ec16de88637004aa28562-ovlniphssd.chromatic.com/)
-  To run a live-reload Storybook server on your local machine:
+
+To run a live-reload Storybook server on your local machine:
 
 ```
 npm run storybook
