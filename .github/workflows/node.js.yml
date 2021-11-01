@@ -29,7 +29,7 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
       #👇 Adds generates test output to be used by storybook-jest addon
-    - run: npm runtest:generate-output
+    - run: npm run test:generate-output
   deploy: 
     needs: build
     runs-on: ubuntu-latest
