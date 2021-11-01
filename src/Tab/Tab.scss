@@ -1,0 +1,22 @@
+// Generated with util/create-component.js
+@import "../variables.scss";
+@import "../typography.scss";
+
+.tab {
+  @include font-defaults;
+  // Temporary static active marker for
+  margin: 0 20px -3px;
+  padding: 10px 0;
+  color: #898fae;
+  font-size: 21px;
+}
+.active-tab {
+  border-bottom: 3px solid #304ffe;
+  color: #304ffe;
+  // margin: 10px 20px;
+}
+
+.tab:not(.active-tab):hover {
+  color: #575c76;
+  cursor: pointer;
+}

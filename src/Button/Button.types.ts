@@ -1,5 +1,9 @@
 // Generated with util/create-component.js
-  export interface ButtonProps {
-      foo: string;
-  }
-  
+type Variant = "solid" | "outline";
+export interface ButtonProps {
+  children?: React.ReactNode | string | number;
+  variant?: Variant;
+  color?: string;
+  disabled?: boolean;
+  loading?: boolean;
+}

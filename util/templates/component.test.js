@@ -6,7 +6,7 @@ module.exports = (componentName) => ({
   import ${componentName} from "./${componentName}";
   import { ${componentName}Props } from "./${componentName}.types";
   
-  describe("Test Component", () => {
+  describe("${componentName} Component", () => {
     let props: ${componentName}Props;
   
     beforeEach(() => {

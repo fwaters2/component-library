@@ -12,6 +12,7 @@
     "storybook": "start-storybook -p 6006",
     "storybook:export": "build-storybook",
     "test": "jest",
+    "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true",
     "test:watch": "jest --watch",
     "prepublishOnly": "npm run build",
     "generate": "node ./util/create-component"
@@ -30,6 +31,8 @@
     "@babel/core": "^7.15.0",
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-node-resolve": "^11.2.1",
+    "@storybook/addon-controls": "^6.3.12",
+    "@storybook/addon-jest": "^6.3.12",
     "@storybook/react": "^6.3.7",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
