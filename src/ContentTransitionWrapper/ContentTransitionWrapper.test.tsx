@@ -8,12 +8,6 @@ import { ContentTransitionWrapperProps } from "./ContentTransitionWrapper.types"
 describe("ContentTransitionWrapper Component", () => {
   let props: ContentTransitionWrapperProps;
 
-  beforeEach(() => {
-    props = {
-      foo: "bar",
-    };
-  });
-
   const renderComponent = () => render(<ContentTransitionWrapper {...props} />);
 
   it.todo(

@@ -8,12 +8,6 @@ import { TabNavigationProps } from "./TabNavigation.types";
 describe("TabNavigation Component", () => {
   let props: TabNavigationProps;
 
-  beforeEach(() => {
-    props = {
-      foo: "bar",
-    };
-  });
-
   const renderComponent = () => render(<TabNavigation {...props} />);
 
   it.todo(
