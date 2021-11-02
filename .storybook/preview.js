@@ -1,6 +1,17 @@
 // .storybook/preview.js
 
 export const parameters = {
+  options: {
+    storySort: {
+      order: [
+        "Component Library",
+        ["Atoms", "Molecules", "Organisms"],
+        "*",
+        "WIP",
+      ],
+      method: "alphabetical",
+    },
+  },
   backgrounds: {
     default: "canva background",
     values: [

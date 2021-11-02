@@ -6,7 +6,7 @@ import TabContent from "../TabContent/TabContent";
 import ContentTransitionWrapper from "./ContentTransitionWrapper";
 
 export default {
-  title: "ContentTransitionWrapper",
+  title: "WIP/ContentTransitionWrapper",
   decorators: [withTests({ results })],
   component: ContentTransitionWrapper,
   argTypes: {
