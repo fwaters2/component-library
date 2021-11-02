@@ -1,30 +1,33 @@
 // Generated with util/create-component.js
 import React from "react";
-import PillButton from "./PillButton";
+import { default as PillButtonComponent } from "./PillButton";
 import results from "../../.jest-test-results.json";
 
 import { withTests } from "@storybook/addon-jest";
 
 export default {
-  title: "PillButton",
+  title: "Component Library/Molecules/PillsGroup/Pill Button",
   decorators: [withTests({ results })],
-  component: PillButton,
+  component: PillButtonComponent,
   argTypes: {
     active: {
       name: "isActive",
-      control: { type: "boolean", default: false },
+      control: { type: "boolean" },
+      defaultValue: false,
     },
     text: {
       name: "text",
-      control: { type: "text", default: "Positive" },
+      control: { type: "text" },
+      defaultValue: "Positive",
     },
     count: {
       name: "count",
-      control: { type: "number", default: 7 },
+      control: { type: "number" },
+      defaultValue: 24,
     },
   },
 };
 
-export const Dynamic = ({ data, ...args }) => (
-  <PillButton value="test" text="Positive" count={11} {...args} />
+export const PillButton = ({ data, ...args }) => (
+  <PillButtonComponent value="test" text={args.text} {...args} />
 );

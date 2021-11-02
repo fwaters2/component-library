@@ -1,14 +1,14 @@
 // Generated with util/create-component.js
 import React from "react";
-import Button from "./Button";
+import { default as ButtonComponent } from "./Button";
 import results from "../../.jest-test-results.json";
 
 import { withTests } from "@storybook/addon-jest";
 
 export default {
-  title: "Button",
+  title: "Component Library/Atoms/Button",
   decorators: [withTests({ results })],
-  component: Button,
+  component: ButtonComponent,
   argTypes: {
     variant: {
       name: "Variant",
@@ -32,6 +32,6 @@ export default {
   },
 };
 
-export const Dynamic = ({ data, ...args }) => (
-  <Button {...args}>Mark as complete</Button>
+export const Button = ({ data, ...args }) => (
+  <ButtonComponent {...args}>Mark as complete</ButtonComponent>
 );

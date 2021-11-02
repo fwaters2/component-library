@@ -1,18 +1,18 @@
 // Generated with util/create-component.js
 import React from "react";
-import TabContent from "./TabContent";
+import { default as TabContentComponent } from "./TabContent";
 import results from "../../.jest-test-results.json";
 
 import { withTests } from "@storybook/addon-jest";
 
 export default {
-  title: "TabContent",
+  title: "Component Library/Organisms/Tabbed Views/Tab Content",
   decorators: [withTests({ results })],
-  component: TabContent,
+  component: TabContentComponent,
 };
 
-export const Default = () => (
-  <TabContent active={true}>
+export const TabContent = () => (
+  <TabContentComponent active={true}>
     <div>
       <h1>Tab Content</h1>
       <p>
@@ -25,5 +25,5 @@ export const Default = () => (
         nisl aliquet, nunc nisl aliquet, nunc nisl aliquet,
       </p>
     </div>
-  </TabContent>
+  </TabContentComponent>
 );

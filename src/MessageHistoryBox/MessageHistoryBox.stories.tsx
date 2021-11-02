@@ -1,6 +1,6 @@
 // Generated with util/create-component.js
 import React from "react";
-import MessageHistoryBox from "./MessageHistoryBox";
+import { default as MessageHistoryBoxComponent } from "./MessageHistoryBox";
 import results from "../../.jest-test-results.json";
 
 import { withTests } from "@storybook/addon-jest";
@@ -48,11 +48,11 @@ const DUMMY_DATA = [
   },
 ];
 export default {
-  title: "MessageHistoryBox",
+  title: "Component Library/Organisms/Chat Box/Message History Box",
   decorators: [withTests({ results })],
-  component: MessageHistoryBox,
+  component: MessageHistoryBoxComponent,
 };
 
-export const Default = () => (
-  <MessageHistoryBox selected={["3"]} messageHistory={DUMMY_DATA} />
+export const MessageHistoryBox = () => (
+  <MessageHistoryBoxComponent selected={["3"]} messageHistory={DUMMY_DATA} />
 );
