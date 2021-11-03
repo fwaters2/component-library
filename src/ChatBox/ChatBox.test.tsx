@@ -2,9 +2,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import MessageHistoryBox from './MessageHistoryBox';
+import ChatBox from './ChatBox';
 
-describe('MessageHistoryBox Component', () => {
+describe('ChatBox Component', () => {
   it('should highlight selected messages', () => {
     const DUMMY_MESSAGES = [
       {
@@ -21,13 +21,11 @@ describe('MessageHistoryBox Component', () => {
     ];
 
     const renderComponent = () =>
-      render(
-        <MessageHistoryBox selected={['2']} messageHistory={DUMMY_MESSAGES} />,
-      );
+      render(<ChatBox selected={['2']} messageHistory={DUMMY_MESSAGES} />);
 
     const { getByTestId } = renderComponent();
 
-    const component = getByTestId('MessageHistoryBox');
+    const component = getByTestId('ChatBox');
     const selectedMessage = component.querySelector('.message-selected');
 
     expect(selectedMessage.id).toBe('2');

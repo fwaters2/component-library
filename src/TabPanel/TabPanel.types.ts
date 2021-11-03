@@ -1,5 +1,6 @@
 // Generated with util/create-component.js
-export interface TabContentProps {
+
+export interface TabPanelProps {
   active?: boolean;
-  children: React.ReactNode;
+  children: React.ReactChild;
 }

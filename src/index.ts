@@ -1,17 +1,8 @@
 import Button from 'Button/Button';
-import ContentTransitionWrapper from 'ContentTransitionWrapper/ContentTransitionWrapper';
-import PillButton from 'PillButton/PillButton';
-import PillsGroup from 'PillsGroup/PillsGroup';
-import TabContent from 'TabContent/TabContent';
+import ChatBox from 'ChatBox/ChatBox';
+import Pill from 'Pill/Pill';
+import PillNavigation from 'PillNavigation/PillNavigation';
 import TabNavigation from 'TabNavigation/TabNavigation';
-import Tab from 'Tab/Tab';
+import TabPanel from 'TabPanel/TabPanel';
 
-export {
-  Button,
-  ContentTransitionWrapper,
-  PillButton,
-  PillsGroup,
-  TabNavigation,
-  TabContent,
-  Tab,
-};
+export { Button, ChatBox, Pill, PillNavigation, TabNavigation, TabPanel };

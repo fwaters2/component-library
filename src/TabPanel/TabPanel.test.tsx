@@ -2,29 +2,29 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import TabContent from './TabContent';
+import TabPanel from './TabPanel';
 
-describe('TabContent Component', () => {
+describe('TabPanel Component', () => {
   it('should render if active', () => {
     const renderComponent = () =>
       render(
-        <TabContent active>
+        <TabPanel active>
           <div>Tab Content</div>
-        </TabContent>,
+        </TabPanel>,
       );
 
     const { getByTestId } = renderComponent();
 
-    const component = getByTestId('TabContent');
+    const component = getByTestId('TabPanel');
 
     expect(component).toBeInTheDocument();
   });
   it('should not render if inactive', () => {
     const renderComponent = () =>
       render(
-        <TabContent active={false}>
-          <div>Tab Content</div>
-        </TabContent>,
+        <TabPanel active={false}>
+          <div>Tab Panel</div>
+        </TabPanel>,
       );
 
     const { queryByTestId } = renderComponent();

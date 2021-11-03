@@ -1,16 +1,13 @@
 // Generated with util/create-component.js
 import * as React from 'react';
 
-import { MessageHistoryBoxProps } from './MessageHistoryBox.types';
+import { ChatBoxProps } from './ChatBox.types';
 
-import './MessageHistoryBox.scss';
+import './ChatBox.scss';
 
-export default function MessageHistoryBox({
-  messageHistory,
-  selected,
-}: MessageHistoryBoxProps) {
+export default function ChatBox({ messageHistory, selected }: ChatBoxProps) {
   return (
-    <div data-testid="MessageHistoryBox" className="message-history-container">
+    <div data-testid="ChatBox" className="message-history-container">
       {messageHistory.map((x) => {
         if (x.user === 'other') {
           return (

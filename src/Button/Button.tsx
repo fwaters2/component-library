@@ -10,15 +10,9 @@ export default function Button({
   color,
   disabled = false,
   loading = false,
+  onClick = () => console.log('No clickAction Passed to Button Component'),
   children,
 }: ButtonProps) {
-  if (loading) {
-    return (
-      <button className="button-default active solid">
-        <div className="circle-loader" />
-      </button>
-    );
-  }
   if (disabled) {
     return (
       <button
@@ -33,26 +27,43 @@ export default function Button({
 
   if (variant === 'outline') {
     const backgroundColor = color ? { color, borderColor: color } : {};
+
     return (
       <button
         type="button"
         data-testid="Button"
         className="button-default active outline"
         style={backgroundColor}
+        onClick={onClick}
       >
-        {children}
+        <>
+          <div
+            className={`circle-loader ${loading ? 'fadeIn' : 'fadeOut'}`}
+            style={{ borderColor: '#304ffe', borderRightColor: '#fff' }}
+          />
+          <div className={`button-children ${!loading ? 'fadeIn' : 'fadeOut'}`}>
+            {children}
+          </div>
+        </>
       </button>
     );
   }
   const backgroundColor = color ? { backgroundColor: color } : {};
+
   return (
     <button
       type="button"
       data-testid="Button"
       className="button-default active solid"
       style={backgroundColor}
+      onClick={onClick}
     >
-      {children}
+      <>
+        <div className={`circle-loader ${loading ? 'fadeIn' : 'fadeOut'}`} />
+        <div className={`button-children ${!loading ? 'fadeIn' : 'fadeOut'}`}>
+          {children}
+        </div>
+      </>
     </button>
   );
 }

@@ -1,22 +1,23 @@
 // Generated with util/create-component.js
 import * as React from 'react';
 
-import { PillButtonProps } from './PillButton.types';
+import { PillProps } from './Pill.types';
 
-import './PillButton.scss';
+import './Pill.scss';
 
-export default function PillButton({
+export default function Pill({
   active = false,
   text,
   value,
   count,
-  children,
-}: PillButtonProps) {
+  onClick,
+}: PillProps) {
   return (
     <button
       type="button"
-      data-testid="PillButton"
+      data-testid="Pill"
       className={`pill-button ${active ? 'pill-active' : 'pill-inactive'}`}
+      onClick={onClick}
     >
       <span data-testid="pill-text" className="pill-text">
         {text}

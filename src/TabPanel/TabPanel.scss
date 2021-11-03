@@ -1,0 +1,12 @@
+// Generated with util/create-component.js
+
+.fadeOut {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.fadeIn {
+  position: absolute;
+  opacity: 1;
+  transition: opacity 0.5s 0.5s;
+}

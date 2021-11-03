@@ -23,14 +23,5 @@ describe('Button Component', () => {
       const button = getByTestId('Button');
       expect(button).toHaveClass('disabled');
     });
-    it.todo('should have the loading class if the button is loading', () => {
-      const renderComponent = () => render(<Button loading />);
-      const { getByTestId } = renderComponent();
-      const loadingComponent = getByTestId('Button').firstChild;
-      expect(loadingComponent).toHaveClass('loading');
-    });
-    it.todo(
-      'should have a fad out/fade in transition between the text and loading',
-    );
   });
 });

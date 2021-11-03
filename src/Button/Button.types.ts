@@ -6,4 +6,5 @@ export interface ButtonProps {
   color?: string;
   disabled?: boolean;
   loading?: boolean;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }

@@ -1,7 +1,7 @@
 // Generated with util/create-component.js
 import React from 'react';
 import { withTests } from '@storybook/addon-jest';
-import MessageHistoryBoxComponent from './MessageHistoryBox';
+import ChatBoxComponent from './ChatBox';
 import results from '../../.jest-test-results.json';
 
 const DUMMY_DATA = [
@@ -47,11 +47,11 @@ const DUMMY_DATA = [
   },
 ];
 export default {
-  title: 'Component Library/Organisms/Chat Box/Message History Box',
+  title: 'Component Library/Organisms/Chat Box',
   decorators: [withTests({ results })],
-  component: MessageHistoryBoxComponent,
+  component: ChatBoxComponent,
 };
 
-export const MessageHistoryBox = () => (
-  <MessageHistoryBoxComponent selected={['3']} messageHistory={DUMMY_DATA} />
+export const ChatBox = () => (
+  <ChatBoxComponent selected={['3']} messageHistory={DUMMY_DATA} />
 );

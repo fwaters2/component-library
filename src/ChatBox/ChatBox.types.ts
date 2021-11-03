@@ -1,5 +1,5 @@
 // Generated with util/create-component.js
-export interface MessageHistoryBoxProps {
+export interface ChatBoxProps {
   messageHistory: any[];
   selected?: string[];
 }

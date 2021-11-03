@@ -1,10 +1,33 @@
 // Generated with util/create-component.js
-@import "../variables.scss";
-@import "../typography.scss";
+@import '../variables.scss';
+@import '../typography.scss';
 
 .tab-navigation-container {
   padding: 0 50px;
   display: flex;
 
   border-bottom: 3px solid #e1e9f6;
+}
+
+// Tab Styles
+.tab {
+  @include font-defaults;
+  // Temporary static active marker for
+  border: none;
+  font: inherit;
+  background: none;
+  margin: 0 20px -3px;
+  padding: 10px 0;
+  color: #898fae;
+  font-size: 21px;
+}
+.active-tab {
+  border-bottom: 3px solid #304ffe;
+  color: #304ffe;
+  // margin: 10px 20px;
+}
+
+.tab:not(.active-tab):hover {
+  color: #575c76;
+  cursor: pointer;
 }

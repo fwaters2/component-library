@@ -1,14 +1,14 @@
 // Generated with util/create-component.js
 import React from 'react';
 import { withTests } from '@storybook/addon-jest';
-import PillButtonComponent from './PillButton';
+import PillComponent from './Pill';
 import results from '../../.jest-test-results.json';
-import { PillButtonProps } from './PillButton.types';
+import { PillProps } from './Pill.types';
 
 export default {
-  title: 'Component Library/Molecules/PillsGroup/Pill Button',
+  title: 'Component Library/Molecules/Pill',
   decorators: [withTests({ results })],
-  component: PillButtonComponent,
+  component: PillComponent,
   argTypes: {
     active: {
       name: 'isActive',
@@ -28,6 +28,6 @@ export default {
   },
 };
 
-export const PillButton = ({ active, text, count }: PillButtonProps) => (
-  <PillButtonComponent active={active} value="test" text={text} count={count} />
+export const Pill = ({ active, text, count }: PillProps) => (
+  <PillComponent active={active} value="test" text={text} count={count} />
 );

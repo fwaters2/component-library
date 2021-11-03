@@ -11,25 +11,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 20px;
-  cursor: pointer;
+  padding: 0 10px;
 }
 
 .active:hover {
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
 }
 
 .solid {
   @include font-defaults;
   color: white;
   background-color: $cresta-blue;
+  cursor: pointer;
 }
 .outline {
   @include font-defaults;
   border: 1px solid #304ffe;
   color: #304ffe;
   background-color: white;
+  cursor: pointer;
 }
 .disabled {
   @include font-defaults;
@@ -61,5 +61,21 @@
   height: 30px;
   stroke-width: 2;
   stroke: #fff;
-  margin-right: 10px;
+}
+
+.fadeOut {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.fadeIn {
+  position: absolute;
+  opacity: 1;
+  transition: opacity 0.5s 0.5s;
+}
+.button-children {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
