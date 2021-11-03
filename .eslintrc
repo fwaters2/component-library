@@ -1,0 +1,145 @@
+{
+  "extends": ["react-app", "airbnb"],
+  "ignorePatterns": [
+    "src/setupProxy.js",
+    "src/serviceWorker.ts",
+    "src/setupTests.ts"
+  ],
+  "plugins": ["@typescript-eslint"],
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "camelcase": "off",
+    "comma-style": [
+      "error",
+      "last",
+      {
+        "exceptions": {
+          "ArrayPattern": true
+        }
+      }
+    ],
+    "consistent-return": [
+      "error",
+      {
+        "treatUndefinedAsUnspecified": true
+      }
+    ],
+    "function-paren-newline": ["error", "multiline-arguments"],
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-quotes": ["warn", "prefer-double"],
+    "implicit-arrow-linebreak": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/prefer-default-export": "off",
+    "max-classes-per-file": ["error", 2],
+    "no-console": "off",
+    "no-alert": "off",
+    "no-else-return": "off",
+    "no-mixed-operators": [
+      "error",
+      {
+        "allowSamePrecedence": true
+      }
+    ],
+    "no-plusplus": "off",
+    "no-underscore-dangle": "off",
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectExpression": {
+          "multiline": true,
+          "consistent": true
+        },
+        "ObjectPattern": {
+          "multiline": true,
+          "consistent": true
+        },
+        "ImportDeclaration": {
+          "multiline": true,
+          "consistent": true
+        },
+        "ExportDeclaration": {
+          "multiline": true,
+          "consistent": true
+        }
+      }
+    ],
+    "no-restricted-syntax": ["error", "LabeledStatement", "WithStatement"],
+    "padded-blocks": ["error", "never"],
+    "prefer-destructuring": [
+      "error",
+      {
+        "array": false,
+        "object": true
+      }
+    ],
+    "prefer-template": "warn",
+    "radix": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/destructuring-assignment": "warn",
+    "react/jsx-filename-extension": [
+      2,
+      {
+        "extensions": [".jsx", ".tsx"]
+      }
+    ],
+    "react/jsx-tag-spacing": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-props-no-spreading": "warn",
+    "react/no-did-update-set-state": "off",
+    "react/prop-types": "off",
+    "react/require-default-props": "off",
+    "react/state-in-constructor": "off",
+    "react/static-property-placement": ["error", "static public field"],
+    "yoda": "off",
+    // Some rules below replaced by their TS equivalents
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error"],
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": "off"
+  },
+  "parserOptions": {
+    "useJSXTextNode": true,
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    }
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      },
+      "typescript": {
+        "directory": "./tsconfig.json"
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*.ts", "src/**/*.tsx"]
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "no-undef": "off"
+      }
+    }
+  ]
+}
