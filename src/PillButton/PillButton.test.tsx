@@ -1,26 +1,17 @@
 // Generated with util/create-component.js
-import React from "react";
-import { render } from "@testing-library/react";
+import React from 'react';
+import { render } from '@testing-library/react';
 
-import PillButton from "./PillButton";
-import { PillButtonProps } from "./PillButton.types";
+import PillButton from './PillButton';
 
-describe("PillButton Component", () => {
-  let props: PillButtonProps;
-
-  const renderComponent = () => render(<PillButton {...props} />);
-
-  it("should render text correctly", () => {
-    let props: PillButtonProps;
-    props = {
-      text: "Positive",
-      value: "positive",
-    };
-    const renderComponent = () => render(<PillButton {...props} />);
+describe('PillButton Component', () => {
+  it('should render text correctly', () => {
+    const renderComponent = () =>
+      render(<PillButton text="Positive" value="positive" />);
     const { getByTestId } = renderComponent();
 
-    const component = getByTestId("pill-text");
+    const component = getByTestId('pill-text');
 
-    expect(component).toHaveTextContent("Positive");
+    expect(component).toHaveTextContent('Positive');
   });
 });

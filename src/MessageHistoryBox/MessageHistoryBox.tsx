@@ -1,9 +1,9 @@
 // Generated with util/create-component.js
-import * as React from "react";
+import * as React from 'react';
 
-import { MessageHistoryBoxProps } from "./MessageHistoryBox.types";
+import { MessageHistoryBoxProps } from './MessageHistoryBox.types';
 
-import "./MessageHistoryBox.scss";
+import './MessageHistoryBox.scss';
 
 export default function MessageHistoryBox({
   messageHistory,
@@ -12,13 +12,13 @@ export default function MessageHistoryBox({
   return (
     <div data-testid="MessageHistoryBox" className="message-history-container">
       {messageHistory.map((x) => {
-        if (x.user === "other") {
+        if (x.user === 'other') {
           return (
             <div
               key={x.id}
               id={x.id}
               className={`message message-inbound ${
-                selected.includes(x.id) && "message-selected"
+                selected.includes(x.id) && 'message-selected'
               }`}
             >
               {x.message}
@@ -30,7 +30,7 @@ export default function MessageHistoryBox({
               key={x.id}
               id={x.id}
               className={`message message-outbound ${
-                selected.includes(x.id) && "message-selected"
+                selected.includes(x.id) && 'message-selected'
               }`}
             >
               {x.message}

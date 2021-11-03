@@ -1,9 +1,9 @@
 // Generated with util/create-component.js
-import * as React from "react";
+import * as React from 'react';
 
-import { TabNavigationProps } from "./TabNavigation.types";
+import { TabNavigationProps } from './TabNavigation.types';
 
-import "./TabNavigation.scss";
+import './TabNavigation.scss';
 
 export default function TabNavigation({ children }: TabNavigationProps) {
   return (

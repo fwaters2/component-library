@@ -1,22 +1,22 @@
 // Generated with util/create-component.js
-import { withTests } from "@storybook/addon-jest";
-import React from "react";
-import results from "../../.jest-test-results.json";
-import TabContent from "../TabContent/TabContent";
-import ContentTransitionWrapper from "./ContentTransitionWrapper";
+import { withTests } from '@storybook/addon-jest';
+import React from 'react';
+import results from '../../.jest-test-results.json';
+import TabContent from '../TabContent/TabContent';
+import ContentTransitionWrapper from './ContentTransitionWrapper';
 
 export default {
-  title: "WIP/ContentTransitionWrapper",
+  title: 'WIP/ContentTransitionWrapper',
   decorators: [withTests({ results })],
   component: ContentTransitionWrapper,
   argTypes: {
     activeTab: {
-      name: "Active Tab",
-      description: "The active tab",
-      defaultValue: "Tab One",
+      name: 'Active Tab',
+      description: 'The active tab',
+      defaultValue: 'Tab One',
       control: {
-        type: "select",
-        options: ["Tab One", "Tab Two"],
+        type: 'select',
+        options: ['Tab One', 'Tab Two'],
       },
     },
   },
@@ -24,7 +24,7 @@ export default {
 
 export const Default = ({ data, ...args }) => (
   <ContentTransitionWrapper>
-    <TabContent active={args.activeTab === "Tab One"}>
+    <TabContent active={args.activeTab === 'Tab One'}>
       <div>
         <h1>Tab One</h1>
         <p>
@@ -39,7 +39,7 @@ export const Default = ({ data, ...args }) => (
         </p>
       </div>
     </TabContent>
-    <TabContent active={args.activeTab === "Tab Two"}>
+    <TabContent active={args.activeTab === 'Tab Two'}>
       <div>
         <h1>Tab Two</h1>
         <p>

@@ -1,17 +1,13 @@
 // Generated with util/create-component.js
-import React from "react";
-import { render } from "@testing-library/react";
+import React from 'react';
+// import { render } from '@testing-library/react';
 
-import TabNavigation from "./TabNavigation";
-import { TabNavigationProps } from "./TabNavigation.types";
+// import TabNavigation from './TabNavigation';
+// import { TabNavigationProps } from './TabNavigation.types';
 
-describe("TabNavigation Component", () => {
-  let props: TabNavigationProps;
-
-  const renderComponent = () => render(<TabNavigation {...props} />);
-
+describe('TabNavigation Component', () => {
   it.todo(
-    "should take up 100% width of parent"
+    'should take up 100% width of parent',
     // , () => {
     //   props.foo = "bitflux was here";
     //   const { getByTestId } = renderComponent();
@@ -21,5 +17,5 @@ describe("TabNavigation Component", () => {
     //   expect(component).toHaveTextContent("bitflux was here");
     // }
   );
-  it.todo("should have variable left padding");
+  it.todo('should have variable left padding');
 });

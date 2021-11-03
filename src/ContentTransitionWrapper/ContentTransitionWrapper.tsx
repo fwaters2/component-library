@@ -1,9 +1,9 @@
 // Generated with util/create-component.js
-import * as React from "react";
+import * as React from 'react';
 
-import { ContentTransitionWrapperProps } from "./ContentTransitionWrapper.types";
+import { ContentTransitionWrapperProps } from './ContentTransitionWrapper.types';
 
-import "./ContentTransitionWrapper.scss";
+import './ContentTransitionWrapper.scss';
 
 export default function ContentTransitionWrapper({
   visible = false,

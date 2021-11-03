@@ -1,9 +1,9 @@
 // Generated with util/create-component.js
-import * as React from "react";
+import * as React from 'react';
 
-import { TabContentProps } from "./TabContent.types";
+import { TabContentProps } from './TabContent.types';
 
-import "./TabContent.scss";
+import './TabContent.scss';
 
 export default function TabContent({
   active = true,

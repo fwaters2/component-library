@@ -1,18 +1,17 @@
 // Generated with util/create-component.js
-import React from "react";
-import { default as TabContentComponent } from "./TabContent";
-import results from "../../.jest-test-results.json";
-
-import { withTests } from "@storybook/addon-jest";
+import React from 'react';
+import { withTests } from '@storybook/addon-jest';
+import TabContentComponent from './TabContent';
+import results from '../../.jest-test-results.json';
 
 export default {
-  title: "Component Library/Organisms/Tabbed Views/Tab Content",
+  title: 'Component Library/Organisms/Tabbed Views/Tab Content',
   decorators: [withTests({ results })],
   component: TabContentComponent,
 };
 
 export const TabContent = () => (
-  <TabContentComponent active={true}>
+  <TabContentComponent active>
     <div>
       <h1>Tab Content</h1>
       <p>

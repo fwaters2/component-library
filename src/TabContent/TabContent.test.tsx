@@ -1,39 +1,35 @@
 // Generated with util/create-component.js
-import React from "react";
-import { render } from "@testing-library/react";
+import React from 'react';
+import { render } from '@testing-library/react';
 
-import TabContent from "./TabContent";
-import { TabContentProps } from "./TabContent.types";
+import TabContent from './TabContent';
 
-describe("TabContent Component", () => {
-  it("should render if active", () => {
-    let props: TabContentProps;
+describe('TabContent Component', () => {
+  it('should render if active', () => {
     const renderComponent = () =>
       render(
-        <TabContent active={true}>
+        <TabContent active>
           <div>Tab Content</div>
-        </TabContent>
+        </TabContent>,
       );
 
     const { getByTestId } = renderComponent();
 
-    const component = getByTestId("TabContent");
+    const component = getByTestId('TabContent');
 
     expect(component).toBeInTheDocument();
   });
-  it("should not render if inactive", () => {
-    let props: TabContentProps;
-
+  it('should not render if inactive', () => {
     const renderComponent = () =>
       render(
         <TabContent active={false}>
           <div>Tab Content</div>
-        </TabContent>
+        </TabContent>,
       );
 
     const { queryByTestId } = renderComponent();
 
-    const component = queryByTestId("TabContent");
+    const component = queryByTestId('TabContent');
 
     expect(component).not.toBeInTheDocument();
   });

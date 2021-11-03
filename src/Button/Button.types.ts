@@ -1,5 +1,5 @@
 // Generated with util/create-component.js
-type Variant = "solid" | "outline";
+type Variant = 'solid' | 'outline';
 export interface ButtonProps {
   children?: React.ReactNode | string | number;
   variant?: Variant;
