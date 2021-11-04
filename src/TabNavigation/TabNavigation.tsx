@@ -1,21 +1,22 @@
 // Generated with util/create-component.js
 import * as React from 'react';
 
-import { TabProps } from './TabNavigation.types';
+import {
+  TabNavigationProps,
+  TabPanelsProps,
+  TabProps,
+} from './TabNavigation.types';
 
 import './TabNavigation.scss';
-import TabPanel from '../TabPanel/TabPanel';
+import { TabPanelProps } from 'TabPanel/TabPanel.types';
 
 export default function TabNavigation({
   tabs,
   height,
   children,
-}: {
-  tabs: string[];
-  height?: number;
-  children: any;
-}) {
+}: TabNavigationProps) {
   const [activeTabIndex, setActiveTabIndex] = React.useState(0);
+
   return (
     <>
       <Tabs>
@@ -31,9 +32,16 @@ export default function TabNavigation({
       </Tabs>
 
       <TabPanels height={height}>
-        {children.map((panel, index) =>
-          React.cloneElement(panel, { active: index === activeTabIndex }),
-        )}
+        {children.map((child, index) => {
+          const props = {
+            active: activeTabIndex === index,
+          };
+          if (React.isValidElement(child)) {
+            return React.cloneElement(child, props);
+          } else {
+            return child;
+          }
+        })}
       </TabPanels>
     </>
   );
@@ -103,7 +111,7 @@ const Tab = ({
   );
 };
 
-const TabPanels = ({ height, children }: any) => {
+export const TabPanels = ({ height, children }: any) => {
   const [panelHeight, setPanelHeight] = React.useState(height);
 
   const handlePanelHeight = (panelHeight: number) => {
@@ -114,12 +122,17 @@ const TabPanels = ({ height, children }: any) => {
 
   return (
     <div className="tab-panels" style={{ height: panelHeight }}>
-      {children.map((child) =>
-        React.cloneElement(child, {
-          fixedHeight: height,
+      {children.map((child) => {
+        const props = {
           handlePanelHeight,
-        }),
-      )}
+          fixedHeight: height,
+        };
+        if (React.isValidElement(child)) {
+          return React.cloneElement(child, props);
+        } else {
+          return child;
+        }
+      })}
     </div>
   );
 };

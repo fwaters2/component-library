@@ -1,0 +1,17 @@
+import React from 'react';
+import Header from './Header';
+import Sidebar from './Sidebar';
+
+function PageFrame({ children }) {
+  return (
+    <div style={{ display: 'flex' }}>
+      <Sidebar />
+      <div style={{ flex: 1 }}>
+        <Header />
+        {children}
+      </div>
+    </div>
+  );
+}
+
+export default PageFrame;
