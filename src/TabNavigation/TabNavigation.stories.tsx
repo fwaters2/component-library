@@ -76,18 +76,21 @@ export default {
 };
 
 export const TabNavigation = ({ ...args }) => (
-  <TabNavigationComponent
-    tabs={['Details', 'Intent Labels', 'Labeling Guidelines']}
-    height={args.height}
-  >
-    <TabPanel>
-      <TabOne />
-    </TabPanel>
-    <TabPanel>
-      <TabTwo />
-    </TabPanel>
-    <TabPanel>
-      <TabThree />
-    </TabPanel>
-  </TabNavigationComponent>
+  <>
+    <TabNavigationComponent
+      tabs={['Details', 'Intent Labels', 'Labeling Guidelines']}
+      height={args.height}
+    >
+      <TabPanel>
+        <TabOne />
+      </TabPanel>
+      <TabPanel>
+        <TabTwo />
+      </TabPanel>
+      <TabPanel>
+        <TabThree />
+      </TabPanel>
+    </TabNavigationComponent>
+    <div>Other content</div>
+  </>
 );

@@ -35,7 +35,6 @@ export default function TabNavigation({
           React.cloneElement(panel, { active: index === activeTabIndex }),
         )}
       </TabPanels>
-      <div>Other content</div>
     </>
   );
 }
