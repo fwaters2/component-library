@@ -13,6 +13,21 @@ It also features:
 
 ## Development
 
+Here are the steps to to use this package locally.
+
+1. `npm install`
+2. `npm run build`
+3. In the package.json of the project you'd like to use this library, add `"cresta-component-library": "file:../cresta-component-library/build"`
+4. In that project run `npm install`
+5. You can now import and use the imported components. Example: `const { TabNavigation, TabPanel } = require("cresta-component-library");`
+   Note: Currently, imports do not work without typescript file (on the todo list :)
+
+6. "Error: Invalid hook call. Hooks can only be called inside of the body of a function component"
+   On mac:
+
+- `run npm link` in /your-app/node_modules/react. This should make the React's global link.
+- `run npm link react` in /cresta-react-library. This should make the library use the application’s React copy.
+
 ### Testing
 
 ```
