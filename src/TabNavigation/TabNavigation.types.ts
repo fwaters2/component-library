@@ -6,5 +6,6 @@ export interface TabNavigationProps {
 export interface TabProps {
   active?: boolean;
   onClick?: () => void;
+  handleSlider?: (tabWidth: number, tabOffset: number) => void;
   children: React.ReactChild;
 }

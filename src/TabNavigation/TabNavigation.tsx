@@ -10,17 +10,33 @@ export default function TabNavigation() {
   const [activeTabIndex, setActiveTabIndex] = React.useState(0);
   return (
     <>
-      <div data-testid="TabNavigation" className="tab-navigation-container">
-        <Tab active={activeTabIndex === 0} onClick={() => setActiveTabIndex(0)}>
+      <Tabs>
+        <Tab
+          active={activeTabIndex === 0}
+          onClick={() => {
+            setActiveTabIndex(0);
+          }}
+        >
           Details
         </Tab>
-        <Tab active={activeTabIndex === 1} onClick={() => setActiveTabIndex(1)}>
+        <Tab
+          active={activeTabIndex === 1}
+          onClick={() => {
+            setActiveTabIndex(1);
+          }}
+        >
           Intent Labels
         </Tab>
-        <Tab active={activeTabIndex === 2} onClick={() => setActiveTabIndex(2)}>
+        <Tab
+          active={activeTabIndex === 2}
+          onClick={() => {
+            setActiveTabIndex(2);
+          }}
+        >
           Labeling Guidelines
         </Tab>
-      </div>
+      </Tabs>
+
       <div>
         <TabPanel active={activeTabIndex === 0}>
           <div>
@@ -72,30 +88,66 @@ export default function TabNavigation() {
   );
 }
 
-export function Tab({ active = false, onClick, children }: TabProps) {
+const Tabs = ({ children }) => {
+  const [sliderOffset, setSliderOffset] = React.useState(0);
+  const [sliderWidth, setSliderWidth] = React.useState(0);
+
+  const slider = (
+    <div className="slider" style={{ left: sliderOffset, width: sliderWidth }}>
+      <div className="down-arrow" />
+    </div>
+  );
+
+  const handleSlider = (sliderWidth: number, sliderOffset: number) => {
+    setSliderWidth(sliderWidth);
+    setSliderOffset(sliderOffset);
+  };
+
+  return (
+    <div data-testid="TabNavigation" className="tab-navigation-container">
+      {children.map((child) =>
+        React.cloneElement(child, {
+          handleSlider,
+        }),
+      )}
+      {slider}
+    </div>
+  );
+};
+
+const Tab = ({
+  active = false,
+  onClick,
+  handleSlider = () => {},
+  children,
+}: TabProps) => {
+  const [tabWidth, setTabWidth] = React.useState(0);
+  const [tabOffset, setTabOffset] = React.useState(0);
+  const ref = React.useRef<HTMLButtonElement>();
+
+  React.useLayoutEffect(() => {
+    const { clientWidth, offsetLeft } = ref.current;
+    setTabWidth(clientWidth);
+    setTabOffset(offsetLeft);
+    if (active) {
+      handleSlider(clientWidth, offsetLeft);
+    }
+  }, [active]);
+
+  const handleClick = () => {
+    handleSlider(tabWidth, tabOffset);
+    onClick();
+  };
+
   return (
     <button
+      ref={ref}
       type="button"
-      onClick={onClick}
+      onClick={handleClick}
       data-testid="Tab"
       className={`tab ${active ? 'active-tab' : ''}`}
-      style={{ position: 'relative' }}
     >
       {children}
-      {active && (
-        <div
-          style={{
-            position: 'absolute',
-            bottom: -7,
-            left: 'calc(50% - 5px)',
-            width: 0,
-            height: 0,
-            borderLeft: '5px solid transparent',
-            borderRight: '5px solid transparent',
-            borderTop: '5px solid #304ffe',
-          }}
-        />
-      )}
     </button>
   );
-}
+};
