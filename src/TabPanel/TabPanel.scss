@@ -1,4 +1,9 @@
 // Generated with util/create-component.js
+.tab-panel {
+  overflow: auto;
+  background-color: lightgrey;
+  padding: 0 20px;
+}
 
 .fadeOut {
   position: absolute;

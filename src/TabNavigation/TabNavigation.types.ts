@@ -9,3 +9,8 @@ export interface TabProps {
   handleSlider?: (tabWidth: number, tabOffset: number) => void;
   children: React.ReactChild;
 }
+
+export interface TabPanels {
+  height?: number;
+  children: React.ReactChild[];
+}

@@ -6,84 +6,36 @@ import { TabProps } from './TabNavigation.types';
 import './TabNavigation.scss';
 import TabPanel from '../TabPanel/TabPanel';
 
-export default function TabNavigation() {
+export default function TabNavigation({
+  tabs,
+  height,
+  children,
+}: {
+  tabs: string[];
+  height?: number;
+  children: any;
+}) {
   const [activeTabIndex, setActiveTabIndex] = React.useState(0);
   return (
     <>
       <Tabs>
-        <Tab
-          active={activeTabIndex === 0}
-          onClick={() => {
-            setActiveTabIndex(0);
-          }}
-        >
-          Details
-        </Tab>
-        <Tab
-          active={activeTabIndex === 1}
-          onClick={() => {
-            setActiveTabIndex(1);
-          }}
-        >
-          Intent Labels
-        </Tab>
-        <Tab
-          active={activeTabIndex === 2}
-          onClick={() => {
-            setActiveTabIndex(2);
-          }}
-        >
-          Labeling Guidelines
-        </Tab>
+        {tabs.map((tab, index) => (
+          <Tab
+            key={tab}
+            active={activeTabIndex === index}
+            onClick={() => setActiveTabIndex(index)}
+          >
+            {tab}
+          </Tab>
+        ))}
       </Tabs>
 
-      <div>
-        <TabPanel active={activeTabIndex === 0}>
-          <div>
-            <h1>Details</h1>
-            <p>
-              First page of content: Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit. Sed euismod ipsum velit, eu aliquam eros
-              tincidunt eget. Donec euismod, nisi euismod, nunc nisl aliquet,
-              nunc nisl aliquet, nunc nisl aliquet, nunc nisl aliquet, nunc nisl
-              aliquet, nunc nisl aliquet, nunc nisl aliquet, nunc nisl aliquet,
-              nunc nisl aliquet, nunc nisl aliquet, nunc nisl aliquet, nunc nisl
-              aliquet, nunc nisl aliquet, nunc nisl aliquet, nunc nisl aliquet,
-              nunc nisl aliquet, nunc nisl aliquet,
-            </p>
-          </div>
-        </TabPanel>
-        <TabPanel active={activeTabIndex === 1}>
-          <div>
-            <h1>Intent Labels</h1>
-            <p>
-              Second page of content: Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit. Sed euismod ipsum velit, eu aliquam eros
-              tincidunt eget. Donec euismod, nisi euismod, nunc nisl aliquet,
-              nunc nisl aliquet, nunc nisl aliquet, nunc nisl aliquet, nunc nisl
-              aliquet, nunc nisl aliquet, nunc nisl aliquet, nunc nisl aliquet,
-              nunc nisl aliquet, nunc nisl aliquet, nunc nisl aliquet, nunc nisl
-              aliquet, nunc nisl aliquet, nunc nisl aliquet, nunc nisl aliquet,
-              nunc nisl aliquet, nunc nisl aliquet,
-            </p>
-          </div>
-        </TabPanel>
-        <TabPanel active={activeTabIndex === 2}>
-          <div>
-            <h1>Labeling Guidelines</h1>
-            <p>
-              Second page of content: Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit. Sed euismod ipsum velit, eu aliquam eros
-              tincidunt eget. Donec euismod, nisi euismod, nunc nisl aliquet,
-              nunc nisl aliquet, nunc nisl aliquet, nunc nisl aliquet, nunc nisl
-              aliquet, nunc nisl aliquet, nunc nisl aliquet, nunc nisl aliquet,
-              nunc nisl aliquet, nunc nisl aliquet, nunc nisl aliquet, nunc nisl
-              aliquet, nunc nisl aliquet, nunc nisl aliquet, nunc nisl aliquet,
-              nunc nisl aliquet, nunc nisl aliquet,
-            </p>
-          </div>
-        </TabPanel>
-      </div>
+      <TabPanels height={height}>
+        {children.map((panel, index) =>
+          React.cloneElement(panel, { active: index === activeTabIndex }),
+        )}
+      </TabPanels>
+      <div>Other content</div>
     </>
   );
 }
@@ -149,5 +101,26 @@ const Tab = ({
     >
       {children}
     </button>
+  );
+};
+
+const TabPanels = ({ height, children }: any) => {
+  const [panelHeight, setPanelHeight] = React.useState(height);
+
+  const handlePanelHeight = (panelHeight: number) => {
+    if (!height) {
+      setPanelHeight(panelHeight);
+    }
+  };
+
+  return (
+    <div className="tab-panels" style={{ height: panelHeight }}>
+      {children.map((child) =>
+        React.cloneElement(child, {
+          fixedHeight: height,
+          handlePanelHeight,
+        }),
+      )}
+    </div>
   );
 };
