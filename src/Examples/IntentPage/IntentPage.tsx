@@ -4,6 +4,8 @@ import TabNavigation from '../../TabNavigation/TabNavigation';
 import TabPanel from '../../TabPanel/TabPanel';
 import PillNavigation from '../../PillNavigation/PillNavigation';
 import ChatBox from '../../ChatBox/ChatBox';
+import SearchBox from '../../SearchBox/SearchBox';
+
 const SHORT_SENTENCE = 'Positive sentence Example';
 
 const LONG_SENTENCE =
@@ -67,7 +69,7 @@ const TabOne = () => {
 };
 const TabTwo = () => (
   <div>
-    <PillNavigation
+    <SearchBox placeholder="Search in labels.." />
       pills={[
         { text: 'Postive', count: 11 },
         { text: 'Negative', count: 15 },

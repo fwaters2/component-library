@@ -1,0 +1,25 @@
+// Generated with util/create-component.js
+@import '../variables.scss';
+@import '../typography.scss';
+
+.search-box {
+  border-radius: $cresta-border-radius;
+  background-color: #e1e9f6;
+  display: flex;
+  align-items: center;
+}
+.search-box__input {
+  @include font-defaults;
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  outline: none;
+  flex: 1;
+}
+.search-box__input::placeholder {
+  opacity: 0.5;
+}
+.search-box__icon {
+  padding: 10px;
+  opacity: 0.5;
+}
