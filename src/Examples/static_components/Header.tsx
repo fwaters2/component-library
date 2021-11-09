@@ -2,7 +2,14 @@ import React from 'react';
 
 function Header() {
   return (
-    <div style={{ height: '60px', backgroundColor: 'white ' }}>Header</div>
+    <div
+      style={{
+        backgroundColor: 'white ',
+        padding: '40px',
+      }}
+    >
+      <strong>PoV</strong> Intent Detail
+    </div>
   );
 }
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from '../../Button/Button';
 import PillNavigation from '../../PillNavigation/PillNavigation';
-import Pill from '../../Pill/Pill';
 import TabPanel from '../../TabPanel/TabPanel';
 
 const POSITIVE_PANEL = () => (
@@ -34,24 +33,48 @@ const NEGATIVE_PANEL = () => (
 );
 
 function CreateIntentPage() {
+  const textAreaStyle = {
+    width: '100%',
+    border: 'none',
+    resize: 'none',
+    borderRadius: '6px',
+    padding: '5px 20px',
+  };
   return (
-    <div>
+    <div style={{ padding: '40px' }}>
       <div style={{ position: 'relative' }}>
         <h1>Driver.Photoshop.Crash</h1>
-        <div
-          style={{ position: 'absolute', right: 0, top: 0, display: 'flex' }}
+        <span
+          style={{
+            fontSize: '10pt',
+            backgroundColor: 'white',
+            padding: '5px',
+            borderRadius: '6px',
+          }}
         >
-          <Button>Cancel</Button>
+          F1 0.77
+        </span>
+        <div
+          style={{
+            position: 'absolute',
+            right: 0,
+            top: 0,
+            display: 'flex',
+          }}
+        >
+          <Button variant="outline" style={{ marginRight: '20px' }}>
+            Cancel
+          </Button>
           <Button>Save</Button>
         </div>
       </div>
       <div>
         <h2>Description</h2>
-        <textarea />
+        <textarea style={textAreaStyle} />
       </div>
       <div>
         <h2>Labeling Guidelines</h2>
-        <textarea />
+        <textarea style={textAreaStyle} />
       </div>
       <div>
         <h2>Canonical Examples</h2>

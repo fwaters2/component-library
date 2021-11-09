@@ -69,7 +69,10 @@ const TabOne = () => {
 };
 const TabTwo = () => (
   <div>
-    <SearchBox placeholder="Search in labels.." />
+    <div style={{ marginBottom: '20px' }}>
+      <SearchBox placeholder="Search in labels.." />
+    </div>
+    <PillNavigation
       pills={[
         { text: 'Postive', count: 11 },
         { text: 'Negative', count: 15 },
@@ -186,16 +189,30 @@ const ListItem = ({ text }) => {
 function IntentPage() {
   return (
     <div>
-      <div style={{ position: 'relative' }}>
+      <div style={{ position: 'relative', padding: '40px' }}>
         <div>
           <h1>Photoshop Crash</h1>
-          <p>Subheader</p>
+          <span
+            style={{
+              fontSize: '10pt',
+              backgroundColor: 'white',
+              padding: '5px',
+              borderRadius: '6px',
+            }}
+          >
+            F1 0.77 Driver.Photoshop.Crash
+          </span>
         </div>
         <div
-          style={{ position: 'absolute', right: 0, top: 0, display: 'flex' }}
+          style={{
+            position: 'absolute',
+            right: '40px',
+            top: '40px',
+            display: 'flex',
+          }}
         >
-          <Button>Mark as Complete</Button>
-          <Button>Edit</Button>
+          <Button variant="outline">Mark as Complete</Button>
+          <Button style={{ marginLeft: '20px' }}>Edit</Button>
         </div>
       </div>
       <TabNavigation tabs={['Details', 'Intent Labels', 'Labeling Guidelines']}>
