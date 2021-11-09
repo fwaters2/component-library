@@ -1,9 +1,7 @@
 // Generated with util/create-component.js
 import React from 'react';
 import { render } from '@testing-library/react';
-
 import TabNavigation from './TabNavigation';
-import { TabNavigationProps } from './TabNavigation.types';
 import TabPanel from '../TabPanel/TabPanel';
 
 describe('TabNavigation Component', () => {
@@ -21,6 +19,6 @@ describe('TabNavigation Component', () => {
       </TabNavigation>,
     );
     expect(getByText('Panel 1')).toBeInTheDocument();
-    expect(getByText('Panel 2')).not.toBeInTheDocument();
+    expect(() => getByText('Panel 2')).toThrow();
   });
 });

@@ -9,10 +9,12 @@ export default function TabPanels(props: TabPanelsProps) {
   return (
     <div style={{ ...props.style }}>
       <SwitchTransition>
-        <CSSTransition
+        <CSSTransition<undefined>
           key={activeTabIndex}
-          addEndListener={(node: any, done: () => void) =>
-            node.addEventListener('transitionend', done, false)
+          addEndListener={
+            (node: HTMLElement, done: () => void) =>
+              node.addEventListener('transitionend', done, false)
+            // eslint-disable-next-line react/jsx-curly-newline
           }
           classNames="panel"
         >
