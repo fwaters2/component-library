@@ -3,7 +3,7 @@ import ModalComponent from './Modal';
 import Button from '../Button/Button';
 
 export default {
-  title: 'Component Library/Molecules/Modal',
+  title: 'WIP/Modal',
   component: ModalComponent,
   parameters: {
     layout: 'centered',
