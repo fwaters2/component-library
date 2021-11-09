@@ -1,16 +1,14 @@
 // Generated with util/create-component.js
-@import "../variables.scss";
-@import "../typography.scss";
+@import '../variables.scss';
+@import '../typography.scss';
 
 .pill-button {
   @include font-defaults;
   display: flex;
-
   border-radius: 10px;
   width: 128px;
   height: 39px;
   border: none;
-
   align-items: center;
 }
 .pill-active {
