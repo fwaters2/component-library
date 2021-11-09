@@ -4,7 +4,7 @@ import { TabPanelProps } from 'TabPanel/TabPanel.types';
 export interface TabNavigationProps {
   tabs: string[];
   height?: number;
-  children: TabPanelProps[];
+  children?: any;
 }
 
 export interface TabPanelsProps {

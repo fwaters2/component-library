@@ -1,9 +1,10 @@
 // Generated with util/create-component.js
 import React from 'react';
-import { TabPanels } from '../TabNavigation/TabNavigation';
+import TabPanels from '../TabPanels/TabPanels';
 import Pill from '../Pill/Pill';
 
-export default function PillNavigation({ pills, children }) {
+export default function PillNavigation(props) {
+  const { pills, panelContainerStyle, children } = props;
   const [activeTabIndex, setActiveTabIndex] = React.useState(0);
   return (
     <div>
@@ -12,17 +13,11 @@ export default function PillNavigation({ pills, children }) {
         activeTabIndex={activeTabIndex}
         setActiveTabIndex={setActiveTabIndex}
       />
-      <TabPanels>
-        {children.map((child, index) => {
-          const props = {
-            active: activeTabIndex === index,
-          };
-          if (React.isValidElement(child)) {
-            return React.cloneElement(child, props);
-          } else {
-            return child;
-          }
-        })}
+      <TabPanels
+        style={{ ...panelContainerStyle }}
+        activeTabIndex={activeTabIndex}
+      >
+        {children}
       </TabPanels>
     </div>
   );
@@ -30,14 +25,18 @@ export default function PillNavigation({ pills, children }) {
 
 const Pills = ({ pills, activeTabIndex, setActiveTabIndex }) => (
   <div style={{ display: 'flex' }}>
-    {pills.map((pill, index) => (
-      <Pill
-        active={activeTabIndex === index}
-        text={pill.text}
-        value={pill.value}
-        count={pill.count}
-        onClick={() => setActiveTabIndex(index)}
-      />
-    ))}
+    {pills.map(({ text, value, count }, index) => {
+      const leftMargin = index !== 0 ? '0.5rem' : '0';
+      return (
+        <Pill
+          active={activeTabIndex === index}
+          text={text}
+          value={value}
+          count={count}
+          onClick={() => setActiveTabIndex(index)}
+          style={{ marginLeft: leftMargin }}
+        />
+      );
+    })}
   </div>
 );
