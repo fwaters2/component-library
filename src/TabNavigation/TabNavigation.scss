@@ -3,10 +3,16 @@
 @import '../typography.scss';
 
 .tab-navigation-container {
-  padding: 0 50px;
   display: flex;
   position: relative;
   border-bottom: 3px solid #e1e9f6;
+}
+
+.tabs-container {
+  // Temporarily Blank
+}
+.tabs-container:first-child {
+  margin-left: 40px;
 }
 
 // Tab Styles
@@ -15,7 +21,7 @@
   border: none;
   font: inherit;
   background: none;
-  margin: 0 20px -3px;
+  margin: 0 40px -3px 0;
   padding: 10px 0;
   color: #898fae;
   font-size: 21px;
@@ -51,4 +57,8 @@
 }
 .tab-panels {
   transition: height 0.5s;
+}
+
+.remove-btn {
+  margin-right: 0.5rem;
 }

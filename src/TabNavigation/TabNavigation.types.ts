@@ -1,14 +1,10 @@
-import { TabPanelProps } from 'TabPanel/TabPanel.types';
-
-// Generated with util/create-component.js
 export interface TabNavigationProps {
   tabs: string[];
-  height?: number;
+  tabsStyle?: React.CSSProperties;
+  panelContainerStyle?: React.CSSProperties;
   children?: any;
 }
-
 export interface TabPanelsProps {
-  height?: number;
   children: React.ReactNode;
 }
 export interface TabProps {
