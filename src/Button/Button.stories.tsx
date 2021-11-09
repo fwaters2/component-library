@@ -54,9 +54,13 @@ export const Dynamic = ({
     <svg
       className="checkmark"
       style={{
-        stroke: variant === 'outline' && !disabled ? '#304ffe' : '#fff',
+        stroke:
+          disabled || variant !== 'outline'
+            ? 'white'
+            : color
+            ? color
+            : '#3356fa',
       }}
-      xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 52 52"
     >
       <path fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
