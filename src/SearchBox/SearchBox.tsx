@@ -10,7 +10,7 @@ export default function SearchBox(
 ) {
   const iconSize = 18;
   return (
-    <div className="search-box">
+    <div className="search-box" style={{ ...props.style }}>
       <input className="search-box__input" type="text" {...props} />
       <svg
         className="search-box__icon"

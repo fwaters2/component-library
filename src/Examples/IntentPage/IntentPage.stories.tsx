@@ -6,6 +6,9 @@ export default {
   title: 'Example Pages/Intent Page',
 
   component: IntentPageComponent,
+  parameters: {
+    layout: 'fullscreen',
+  },
 };
 
 export const IntentPage = () => (

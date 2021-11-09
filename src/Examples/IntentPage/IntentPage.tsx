@@ -56,6 +56,7 @@ const TabOne = () => {
           { text: 'Positive', count: 4 },
           { text: 'Negative', count: 3 },
         ]}
+        panelContainerStyle={{ margin: '20px 0' }}
       >
         <TabPanel>
           <BunchOfExamples />
@@ -154,12 +155,12 @@ const DUMMY_DATA = [
 
 const POSITIVE_PANEL = () => (
   <div style={{ display: 'flex' }}>
-    <div>
+    <div style={{ flex: 1 }}>
       {manySentences.map((sentence, index) => (
         <ListItem key={index} text={sentence} />
       ))}
     </div>
-    <div>
+    <div style={{ flex: 1 }}>
       <ChatBox selected={['3']} messageHistory={DUMMY_DATA} />
     </div>
   </div>
@@ -215,7 +216,11 @@ function IntentPage() {
           <Button style={{ marginLeft: '20px' }}>Edit</Button>
         </div>
       </div>
-      <TabNavigation tabs={['Details', 'Intent Labels', 'Labeling Guidelines']}>
+      <TabNavigation
+        tabs={['Details', 'Intent Labels', 'Labeling Guidelines']}
+        tabsStyle={{ margin: '0 0 40px 0' }}
+        panelContainerStyle={{ margin: '0 40px' }}
+      >
         <TabPanel>
           <TabOne />
         </TabPanel>

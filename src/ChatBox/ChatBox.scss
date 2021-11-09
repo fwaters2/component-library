@@ -1,9 +1,10 @@
 // Generated with util/create-component.js
-@import "../variables.scss";
-@import "../typography.scss";
+@import '../variables.scss';
+@import '../typography.scss';
 
 .message-history-container {
-  width: 400px;
+  flex-basis: 600px;
+
   height: 500px;
   background-color: #e1e9f5;
   overflow-y: scroll;
