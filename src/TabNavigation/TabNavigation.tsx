@@ -1,39 +1,41 @@
 // Generated with util/create-component.js
 import * as React from 'react';
 
-import { TabProps } from './TabNavigation.types';
-
+import { TabNavigationProps, TabProps } from './TabNavigation.types';
 import './TabNavigation.scss';
-import TabPanel from '../TabPanel/TabPanel';
+import TabPanels from '../TabPanels/TabPanels';
 
 export default function TabNavigation({
   tabs,
-  height,
+  tabsStyle,
+  panelContainerStyle,
   children,
-}: {
-  tabs: string[];
-  height?: number;
-  children: any;
-}) {
+}: TabNavigationProps) {
   const [activeTabIndex, setActiveTabIndex] = React.useState(0);
   return (
     <>
-      <Tabs>
-        {tabs.map((tab, index) => (
-          <Tab
-            key={tab}
-            active={activeTabIndex === index}
-            onClick={() => setActiveTabIndex(index)}
-          >
-            {tab}
-          </Tab>
-        ))}
-      </Tabs>
-
-      <TabPanels height={height}>
-        {children.map((panel, index) =>
-          React.cloneElement(panel, { active: index === activeTabIndex }),
-        )}
+      <div
+        data-testid="TabNavigation"
+        className="tab-navigation-container"
+        style={{ ...tabsStyle }}
+      >
+        <Tabs>
+          {tabs.map((tab, index) => (
+            <Tab
+              key={tab}
+              active={activeTabIndex === index}
+              onClick={() => setActiveTabIndex(index)}
+            >
+              {tab}
+            </Tab>
+          ))}
+        </Tabs>
+      </div>
+      <TabPanels
+        style={{ ...panelContainerStyle }}
+        activeTabIndex={activeTabIndex}
+      >
+        {children}
       </TabPanels>
     </>
   );
@@ -55,7 +57,7 @@ const Tabs = ({ children }) => {
   };
 
   return (
-    <div data-testid="TabNavigation" className="tab-navigation-container">
+    <div data-testid="TabNavigation" className="tabs-container">
       {children.map((child) =>
         React.cloneElement(child, {
           handleSlider,
@@ -100,26 +102,5 @@ const Tab = ({
     >
       {children}
     </button>
-  );
-};
-
-const TabPanels = ({ height, children }: any) => {
-  const [panelHeight, setPanelHeight] = React.useState(height);
-
-  const handlePanelHeight = (panelHeight: number) => {
-    if (!height) {
-      setPanelHeight(panelHeight);
-    }
-  };
-
-  return (
-    <div className="tab-panels" style={{ height: panelHeight }}>
-      {children.map((child) =>
-        React.cloneElement(child, {
-          fixedHeight: height,
-          handlePanelHeight,
-        }),
-      )}
-    </div>
   );
 };

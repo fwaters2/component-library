@@ -4,32 +4,32 @@ export const parameters = {
   options: {
     storySort: {
       order: [
-        "Component Library",
-        ["Atoms", "Molecules", "Organisms"],
-        "*",
-        "WIP",
+        'Component Library',
+        ['Atoms', 'Molecules', 'Organisms'],
+        '*',
+        'WIP',
       ],
-      method: "alphabetical",
+      method: 'alphabetical',
     },
   },
   backgrounds: {
-    default: "canva background",
+    default: 'canva background',
     values: [
       {
-        name: "canva background",
-        value: "#F1F5FC",
+        name: 'canva background',
+        value: '#F1F5FC',
       },
       {
-        name: "black",
-        value: "black",
+        name: 'black',
+        value: 'black',
       },
       {
-        name: "grey",
-        value: "grey",
+        name: 'grey',
+        value: 'grey',
       },
       {
-        name: "white",
-        value: "white",
+        name: 'white',
+        value: 'white',
       },
     ],
   },

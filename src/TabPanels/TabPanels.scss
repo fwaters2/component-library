@@ -1,0 +1,21 @@
+// Generated with util/create-component.js
+@import '../variables.scss';
+@import '../typography.scss';
+
+// css transition group
+.panel-enter {
+  opacity: 0;
+}
+.panel-enter-active {
+  opacity: 1;
+}
+.panel-exit {
+  opacity: 1;
+}
+.panel-exit-active {
+  opacity: 0;
+}
+.panel-enter-active,
+.panel-exit-active {
+  transition: opacity 500ms ease;
+}

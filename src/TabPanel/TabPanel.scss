@@ -1,16 +1,5 @@
 // Generated with util/create-component.js
 .tab-panel {
-  overflow: auto;
-  padding: 0 20px;
-}
-
-.fadeOut {
-  position: absolute;
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-.fadeIn {
-  position: absolute;
-  opacity: 1;
-  transition: opacity 0.5s 0.5s;
+  overflow-y: auto;
+  width: 100%;
 }

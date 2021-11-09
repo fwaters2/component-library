@@ -1,10 +1,10 @@
+import { ComponentProps } from 'react';
+
 // Generated with util/create-component.js
 type Variant = 'solid' | 'outline';
-export interface ButtonProps {
-  children?: React.ReactNode | string | number;
+export interface ButtonProps extends ComponentProps<'button'> {
   variant?: Variant;
   color?: string;
-  disabled?: boolean;
   loading?: boolean;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  testHover?: boolean;
 }
